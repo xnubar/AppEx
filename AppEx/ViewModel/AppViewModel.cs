@@ -25,14 +25,21 @@ namespace AppEx.ViewModel
             Messenger.Default.Register<ViewModelBase>(this,
             param => CurrentViewModel = param);
         }
-        #region Commands
-        private RelayCommand _minimizeCommand;
-        public RelayCommand MinimizeCommand
-        {
-            get => _minimizeCommand ?? (_minimizeCommand = new RelayCommand(
-                (() => App.Current.MainWindow.WindowState = System.Windows.WindowState.Minimized)));
-        }
 
+        public void Closewindow()
+        {
+
+            App.Current.Dispatcher.Invoke(() =>
+            {
+                foreach (Window window in Application.Current.Windows)
+                {
+                    if (window.Title.Equals("AppEX"))
+                    {
+                        window.Close();
+                    }
+                }
+            });
+        }
 
         private RelayCommand _maximizeCommand;
         public RelayCommand MaximizeCommand
@@ -52,30 +59,20 @@ namespace AppEx.ViewModel
                     }
                 })));
         }
-
-
+        private RelayCommand _minimizeCommand;
+        public RelayCommand MinimizeCommand
+        {
+            get => _minimizeCommand ?? (_minimizeCommand = new RelayCommand(
+                (() => App.Current.MainWindow.WindowState = System.Windows.WindowState.Minimized)));
+        }
         private RelayCommand _closeCommand;
         public RelayCommand CloseCommand
         {
             get => _closeCommand ?? (_closeCommand = new RelayCommand(
                 (() => App.Current.MainWindow.Close())));
         }
-        private RelayCommand _menuCommand;
-        public RelayCommand MenuCommand
-        {
-            get => _menuCommand ?? (_menuCommand = new RelayCommand(
-                (() => SystemCommands.ShowSystemMenu(App.Current.MainWindow, GetMousePosition()))));
-        }
-
-        private Point GetMousePosition()
-        {
-            // Position of the mouse relative to the window
-            var position = Mouse.GetPosition(App.Current.MainWindow);
-
-            // Add the window position so its a "ToScreen"
-            return new Point(position.X + App.Current.MainWindow.Left, position.Y + App.Current.MainWindow.Top);
-        }
-        #endregion
+       
+   
     }
 }
 

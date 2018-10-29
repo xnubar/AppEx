@@ -4,15 +4,42 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppEx.View"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="AppView" Height="450" Width="800">
+        Title="AppEX" Height="450" Width="800" MinHeight="500" MinWidth="800"
+           AllowsTransparency="False"
+        WindowStyle="None">
     <Window.Resources>
 
         <ResourceDictionary Source="pack://application:,,,/AppEx;component/Resources/DataTemplate.xaml"/>
 
     </Window.Resources>
-    <Grid>
-        
+    <Grid Background="WhiteSmoke">
+       
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="0.3*"/>
+                <ColumnDefinition Width="0.3*"/>
+                <ColumnDefinition Width="0.4*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Background="#3F434E" Margin="0 5 0 0" Command="{Binding MinimizeCommand}" Content="{materialDesign:PackIcon Kind=WindowMinimize}" HorizontalAlignment="Right" Width="20" Height="20" Padding="0.2"/>
+            <Button Grid.Column="2" Background="#3F434E" Margin="0 5 0 0" Command="{Binding MaximizeCommand}" Content="{materialDesign:PackIcon Kind=WindowMaximize}" HorizontalAlignment="Right" Width="20" Height="20" Padding="0.2"/>
+            <Button Grid.Column="3" Background="#3F434E" Margin="0 5 5 0" Command="{Binding CloseCommand}" Content="{materialDesign:PackIcon Kind=Close}" HorizontalAlignment="Center" Width="20" Height="20" Padding="0.2"/>
+
+        </Grid>
+        <ContentControl Grid.Row="1" Content="{Binding CurrentViewModel}"/>
     </Grid>
+    <WindowChrome.WindowChrome>
+        <WindowChrome
+            ResizeBorderThickness="10"
+            CaptionHeight="25"
+            GlassFrameThickness="0"
+            />
+    </WindowChrome.WindowChrome>
 </Window>

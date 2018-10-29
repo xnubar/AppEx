@@ -12,14 +12,21 @@ namespace AppEx
 {
     public class ViewModelLocator
     {
-        private INavigationService navigationService;
+        private NavigationService navigationService;
         public AppViewModel appViewModel;
-
+        public LoginViewModel loginViewModel;
+        public RegisterEmailViewModel registerEmailViewModel;
         public ViewModelLocator()
         {
             navigationService = new NavigationService();
             appViewModel = new AppViewModel();
-           
+            loginViewModel = new LoginViewModel(navigationService);
+            registerEmailViewModel = new RegisterEmailViewModel(navigationService);
+
+            navigationService.AddPage(loginViewModel, ViewType.LogIn);
+            navigationService.AddPage(loginViewModel, ViewType.RegisterEmail);
+
+            navigationService.NavigateTo(ViewType.LogIn);
         }
     }
 }
