@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppEx.View;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,11 @@ namespace AppEx
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            var viewModelLocator = new ViewModelLocator();
+            var app = new AppView();
+            app.DataContext = viewModelLocator.appViewModel;
+        }
     }
 }
