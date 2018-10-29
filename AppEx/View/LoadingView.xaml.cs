@@ -16,15 +16,13 @@ using System.Windows.Shapes;
 namespace AppEx.View
 {
     /// <summary>
-    /// Interaction logic for LoginView.xaml
+    /// Interaction logic for LoadingView.xaml
     /// </summary>
-    public partial class LoginView : UserControl
+    public partial class LoadingView : UserControl
     {
-        public LoginView()
+        public LoadingView()
         {
             InitializeComponent();
         }
-
-      
     }
 }

@@ -24,8 +24,8 @@ namespace AppEx
             registerEmailViewModel = new RegisterEmailViewModel(navigationService);
 
             navigationService.AddPage(loginViewModel, ViewType.LogIn);
-            navigationService.AddPage(loginViewModel, ViewType.RegisterEmail);
-
+            navigationService.AddPage(registerEmailViewModel, ViewType.RegisterEmail);
+           
             navigationService.NavigateTo(ViewType.LogIn);
         }
     }

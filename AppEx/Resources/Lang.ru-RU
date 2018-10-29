@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:AppEx.Resources">
+  <v:String x:Key="Username">İstifadəçi adı</v:String>
+  <v:String x:Key="Password">Şifrə</v:String>
+  <v:String x:Key="ForgotTextUserName">İstifadəçi adı</v:String>
+  <v:String x:Key="ForgotTextPassword">/Şifrəni unutmusan?</v:String>
+</ResourceDictionary>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AppEx.ViewModel;
+using GalaSoft.MvvmLight;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,21 +12,22 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace AppEx.View
 {
     /// <summary>
-    /// Interaction logic for LoginView.xaml
+    /// Interaction logic for ExtraWindow.xaml
     /// </summary>
-    public partial class LoginView : UserControl
+    public partial class ExtraWindow : Window
     {
-        public LoginView()
+      
+        public ExtraWindow(ViewModelBase view, double width = 800, double height = 450)
         {
             InitializeComponent();
+            Width = width;
+            Height = height;
+            this.DataContext = new ExtraWindowViewModel(view);
         }
-
-      
     }
 }
