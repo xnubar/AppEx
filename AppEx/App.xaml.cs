@@ -19,6 +19,7 @@ namespace AppEx
             var viewModelLocator = new ViewModelLocator();
             var app = new AppView();
             app.DataContext = viewModelLocator.appViewModel;
+            app.ShowDialog();
         }
     }
 }

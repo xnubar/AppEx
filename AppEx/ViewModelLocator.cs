@@ -1,4 +1,5 @@
 ﻿using AppEx.Navigation;
+using AppEx.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +13,13 @@ namespace AppEx
     public class ViewModelLocator
     {
         private INavigationService navigationService;
+        public AppViewModel appViewModel;
+
         public ViewModelLocator()
         {
             navigationService = new NavigationService();
+            appViewModel = new AppViewModel();
+           
         }
     }
 }

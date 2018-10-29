@@ -8,5 +8,6 @@ namespace AppEx.Navigation
 {
     public enum ViewType
     {
+        Home
     }
 }
