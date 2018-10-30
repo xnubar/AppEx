@@ -46,7 +46,6 @@
 
         <Border Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="420" Width="650"  Background="White" BorderBrush="White" BorderThickness="1" CornerRadius="30">
             <Grid>
-
                 <Grid x:Name="GridMain" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="540" Width="1010"/>
                 <Grid Height="60" VerticalAlignment="Top" Background="#3F434E">
                     <Grid.Effect>
