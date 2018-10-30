@@ -13,7 +13,11 @@
     <DataTemplate DataType="{x:Type vm:CodeConfirmationViewModel}">
         <v:CodeConfirmationView/>
     </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:SignUpViewModel}">
+        <v:SignUpView/>
+    </DataTemplate>
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/AppEx;component/Resources/lang.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml">
         </ResourceDictionary>
         <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml">

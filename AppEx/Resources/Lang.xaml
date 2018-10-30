@@ -1,10 +1,25 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:v="clr-namespace:System;assembly=mscorlib"                    
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:AppEx.Resources">
+                   >
     <v:String x:Key="Username">Username</v:String>
     <v:String x:Key="Password">Password</v:String>
+    <v:String x:Key="RePassword">RePassword</v:String>
+
     <v:String x:Key="ForgotTextUserName">Forgot</v:String>
     <v:String x:Key="ForgotTextPassword">Username/Password?</v:String>
+    <v:String x:Key="SignIn">Sign In</v:String>
+    <v:String x:Key="SignUp">SIGN UP NOW</v:String>
+    <v:String x:Key="DontHavAcc">Don't have an account?</v:String>
+    <v:String x:Key="ConfirmCode">Confirmation Code</v:String>
+    <v:String x:Key="Submit">SUBMIT</v:String>
+    <v:String x:Key="Lang">Language</v:String>
+    <v:String x:Key="Fullname">Fullname</v:String>
+    <v:String x:Key="Email">Email</v:String>
+
+    <v:String x:Key="Registration">Registration</v:String>
+
+
+
 
 </ResourceDictionary>

@@ -8,6 +8,6 @@ namespace AppEx.Navigation
 {
     public enum ViewType
     {
-        LogIn,RegisterEmail,ConfirmCode
+        LogIn,RegisterEmail,ConfirmCode,SignUp
     }
 }

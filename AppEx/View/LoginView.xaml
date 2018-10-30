@@ -35,7 +35,7 @@
                     <RowDefinition Height="1.2*"/>
                     <RowDefinition Height="0.5*"/>
                     <RowDefinition Height="0.5*"/>
-                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="0.9*"/>
                 </Grid.RowDefinitions>
                 <Border Grid.Row="0" BorderThickness="1" BorderBrush="Black" Background="#3F434E" CornerRadius="5">
 
@@ -51,7 +51,7 @@
                             <ColumnDefinition Width="25"/>
                         </Grid.ColumnDefinitions>
                         <materialDesign:PackIcon Kind="At" Grid.Column="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="20" Height="20"/>
-                        <TextBox  x:Name="Username"  materialDesign:HintAssist.Hint="Username" Grid.Column="1"  TextWrapping="Wrap" BorderBrush="Transparent" Text="{Binding ProjectName,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true, NotifyOnValidationError=true}" ToolTip="Project title" ToolTipService.Placement="MousePoint"  Background="Transparent" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+                        <TextBox  x:Name="Username"  materialDesign:HintAssist.Hint="{DynamicResource Username}" Grid.Column="1"  TextWrapping="Wrap" BorderBrush="Transparent" Text="{Binding ProjectName,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true, NotifyOnValidationError=true}" ToolTip="Project title" ToolTipService.Placement="MousePoint"  Background="Transparent" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
                     </Grid>
                 </Border>
                 <Border Grid.Row="2"  Grid.ColumnSpan="2" Margin="7 5 0 5" BorderBrush="WhiteSmoke" Background="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="268" BorderThickness="4"  CornerRadius="19">
@@ -62,7 +62,7 @@
                             <ColumnDefinition Width="25"/>
                         </Grid.ColumnDefinitions>
                         <materialDesign:PackIcon Kind="TextboxPassword" Grid.Column="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="20" Height="20"/>
-                        <TextBox  x:Name="Password"  materialDesign:HintAssist.Hint="Password" Grid.Column="1"  TextWrapping="Wrap" BorderBrush="Transparent" Text="{Binding ProjectName,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true, NotifyOnValidationError=true}" ToolTip="Project title" ToolTipService.Placement="MousePoint"  Background="Transparent" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+                        <TextBox  x:Name="Password"  materialDesign:HintAssist.Hint="{DynamicResource Password}" Grid.Column="1"  TextWrapping="Wrap" BorderBrush="Transparent" Text="{Binding ProjectName,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true, NotifyOnValidationError=true}" ToolTip="Project title" ToolTipService.Placement="MousePoint"  Background="Transparent" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
                     </Grid>
                 </Border>
                 <Grid Grid.Row="3" VerticalAlignment="Top">
@@ -70,17 +70,17 @@
                         <ColumnDefinition Width="1.2*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock  x:Name="ForgotTextUserName"  Grid.Column="0" HorizontalAlignment="Right" Margin="0 0 5 0" VerticalAlignment="Center" Foreground="Gray" FontWeight="DemiBold" FontSize="12" Text="Forgot"/>
-                    <TextBlock x:Name="ForgotTextPassword" Grid.Column="1" HorizontalAlignment="Left" FontWeight="DemiBold" VerticalAlignment="Center" Foreground="#3F434E" FontSize="12" Text="Username/Password?" />
+                    <TextBlock  x:Name="ForgotTextUserName"  Grid.Column="0" HorizontalAlignment="Right" Margin="0 0 5 0" VerticalAlignment="Center" Foreground="Gray" FontWeight="DemiBold" FontSize="12" Text="{DynamicResource ForgotTextUserName}"/>
+                    <TextBlock x:Name="ForgotTextPassword" Grid.Column="1" HorizontalAlignment="Left" FontWeight="DemiBold" VerticalAlignment="Center" Foreground="#3F434E" FontSize="12" Text="{DynamicResource ForgotTextPassword}" />
                 </Grid>
 
                 <Border VerticalAlignment="Center" Width="270" Height="40" BorderThickness="1" Background="#3F434E"  CornerRadius="20"  Grid.Row="4">
-                    <Button BorderBrush="Transparent"  Command="{Binding LogInBtnCommand}" Background="Transparent" Foreground="White" FontSize="15" >
-                        SIGN IN
+                    <Button Content="{DynamicResource SignIn}" BorderBrush="Transparent"  Command="{Binding LogInBtnCommand}" Background="Transparent" Foreground="White" FontSize="15" >
+                      
                     </Button>
                 </Border>
-                <TextBlock Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Don't have an account?"/>
-                <Label Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#3F434E" FontWeight="Bold" Content="SIGN UP NOW">
+                <TextBlock Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{DynamicResource DontHavAcc}"/>
+                <Label Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#3F434E" FontWeight="Bold" Content="{DynamicResource SignUp}">
                     
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="MouseDown" >
@@ -88,30 +88,10 @@
                         </i:EventTrigger>
                     </i:Interaction.Triggers>                    
                 </Label>
-                <Grid Grid.Row="7">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Label Grid.Column="0" Foreground="#3F434E" HorizontalAlignment="Right" Margin="0 0 10 0" Content="AZ">
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="MouseDown" >
-                                <i:InvokeCommandAction Command="{Binding AzLangCommand}" />
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </Label>
-
-                    <Label Grid.Column="1" Foreground="#3F434E" HorizontalAlignment="Left" Content="ENG">
-                     
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="MouseDown" >
-                                <i:InvokeCommandAction Command="{Binding EngLangCommand}" />
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                            
-                    </Label>
-
-                </Grid>
+                <Menu Grid.Row="7" DockPanel.Dock="Top" Background="{x:Null}" HorizontalAlignment="Center"  VerticalAlignment="Top">
+                    <MenuItem x:Name="menuLanguage"  Header="{DynamicResource Lang}"  />
+                </Menu>
+                
             </Grid>
 
         </Border>

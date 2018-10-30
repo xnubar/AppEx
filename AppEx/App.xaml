@@ -15,7 +15,7 @@
                 <v:RegisterEmailView/>
             </DataTemplate>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/AppEx;component/Resources/Lang.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/AppEx;component/Resources/lang.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
   </Application.Resources>

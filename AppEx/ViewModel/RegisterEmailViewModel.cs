@@ -29,7 +29,19 @@ namespace AppEx.ViewModel
             get { return email; }
             set { Set(ref email, value); }
         }
+        private RelayCommand _cancelCommand;
+        public RelayCommand CancelCommand => _cancelCommand ?? (_cancelCommand = new RelayCommand(
+            () =>
+            {
+                System.Threading.Tasks.Task.Run(() =>
+                {
+                    Email = String.Empty;
+                    navigation.NavigateTo(ViewType.LogIn);
+                    CloseWindow();
 
+                });
+            }
+            ));
         public string this[string columnName]
         {
             get

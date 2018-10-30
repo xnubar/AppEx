@@ -1,17 +1,20 @@
-﻿using GalaSoft.MvvmLight;
+﻿using AppEx.View;
+using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace AppEx.ViewModel
 {
-   public class AppViewModel:ViewModelBase
+    public class AppViewModel : ViewModelBase
     {
         private ViewModelBase currentViewModel;
         public ViewModelBase CurrentViewModel
@@ -19,13 +22,17 @@ namespace AppEx.ViewModel
             get { return currentViewModel; }
             set { Set(ref currentViewModel, value); }
         }
+      
 
+       
         public AppViewModel()
         {
+         
             Messenger.Default.Register<ViewModelBase>(this,
             param => CurrentViewModel = param);
         }
 
+     
         public void Closewindow()
         {
 
@@ -71,8 +78,10 @@ namespace AppEx.ViewModel
             get => _closeCommand ?? (_closeCommand = new RelayCommand(
                 (() => App.Current.MainWindow.Close())));
         }
-       
-   
-    }
-}
 
+
+
+    }
+
+
+}

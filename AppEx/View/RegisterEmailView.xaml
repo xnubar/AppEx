@@ -9,6 +9,8 @@
              Background="WhiteSmoke"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
+        <Image x:Key="MyImage"  Source="../Resources/Images/CancelIcon.png"/>
+
         <Style TargetType="TextBox">
             <Setter Property="Validation.ErrorTemplate">
                 <Setter.Value>
@@ -55,6 +57,8 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1.5*"/>
+                    <RowDefinition Height="0.8*"/>
+
                     <RowDefinition Height="2*"/>
                     <RowDefinition Height="*"/>
 
@@ -64,8 +68,11 @@
                         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="DemiBold" Text="Register Email" FontSize="30"/>
                     </Border>
 
-                    
-                <Border Grid.Row="1"  Margin="7 5 0 5" BorderBrush="WhiteSmoke" Background="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="268" BorderThickness="4"  CornerRadius="19">
+                <Button Grid.Row="1" ToolTip="Previous Page" BorderBrush="Transparent" Content="{StaticResource MyImage}"
+                        Command="{Binding CancelCommand}" Background="Transparent" Foreground="White"
+                           FontSize="15" Height="40" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                <Border Grid.Row="2"  Margin="7 5 0 5" BorderBrush="WhiteSmoke" Background="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="268" BorderThickness="4"  CornerRadius="19">
                     <Grid HorizontalAlignment="Stretch"  >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="45"/>
@@ -76,7 +83,7 @@
                         <TextBox  materialDesign:HintAssist.Hint="Email" Grid.Column="1"  TextWrapping="Wrap" BorderBrush="Transparent" Text="{Binding Email,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true, NotifyOnValidationError=true}" ToolTip="Project title" ToolTipService.Placement="MousePoint"  Background="Transparent" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
                     </Grid>
                 </Border>
-                <Border VerticalAlignment="Top" Width="200" Height="40" BorderThickness="1" Background="#3F434E"  CornerRadius="20"  Grid.Row="2">
+                <Border VerticalAlignment="Top" Width="200" Height="40" BorderThickness="1" Background="#3F434E"  CornerRadius="20"  Grid.Row="3">
                     <Button BorderBrush="Transparent"  Command="{Binding SendConfirmationCodeCommand}" Background="Transparent" Foreground="White" FontSize="15" >
                        REGISTER
                     </Button>

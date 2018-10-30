@@ -2,11 +2,63 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"            
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AppEx.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="WhiteSmoke">
+    <UserControl.Resources>
+        <Image x:Key="MyImage"  Source="../Resources/Images/CancelIcon.png"/>
+    </UserControl.Resources>
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="0.1*"/>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="0.1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="380"/>
+            <RowDefinition  Height="0.1*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="250" Width="500"  Background="White" BorderBrush="White" BorderThickness="1,1,1,1" CornerRadius="19">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition Height="0.8*"/>
+
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" BorderThickness="1" BorderBrush="Black" Background="#3F434E" CornerRadius="5">
+
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="DemiBold" Text="{DynamicResource ConfirmCode}" FontSize="30"/>
+                </Border>
+                <Button Grid.Row="1" ToolTip="Previous Page" BorderBrush="Transparent" Content="{StaticResource MyImage}"
+                        Command="{Binding CancelCommand}" Background="Transparent" Foreground="White"
+                           FontSize="15" Height="40" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+
+
+                <Border Grid.Row="2"  Margin="7 5 0 5" BorderBrush="WhiteSmoke" Background="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="268" BorderThickness="4"  CornerRadius="19">
+                    <Grid HorizontalAlignment="Stretch"  >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="25"/>
+                        </Grid.ColumnDefinitions>
+                        <materialDesign:PackIcon Kind="ConfirmationNumber" Grid.Column="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="20" Height="20"/>
+                        <TextBox  materialDesign:HintAssist.Hint="{DynamicResource ConfirmCode}" Grid.Column="1"  TextWrapping="Wrap" BorderBrush="Transparent" Text="{Binding Email,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true, NotifyOnValidationError=true}" ToolTip="Project title" ToolTipService.Placement="MousePoint"  Background="Transparent" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+                    </Grid>
+                </Border>
+                <Border VerticalAlignment="Top" Width="200" Height="40" BorderThickness="1" Background="#3F434E"  CornerRadius="20"  Grid.Row="3">
+                    <Button Content="{DynamicResource Submit}" BorderBrush="Transparent"  Command="{Binding SendConfirmationCodeCommand}" Background="Transparent" Foreground="White" FontSize="15" >
+                        
+                    </Button>
+                </Border>
+            </Grid>
+        </Border>
     </Grid>
 </UserControl>
