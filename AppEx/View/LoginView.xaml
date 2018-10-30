@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  
+             xmlns:tools="clr-namespace:AppEx.Tools"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"            
              xmlns:local="clr-namespace:AppEx.View"
@@ -43,28 +44,71 @@
                 </Border>
                         
 
-                <Border Grid.Row="1"  Grid.ColumnSpan="2" Margin="7 5 0 5" BorderBrush="WhiteSmoke" Background="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="40" Width="268" BorderThickness="4"  CornerRadius="19">
-                    <Grid HorizontalAlignment="Stretch"  >
+                    <Border  HorizontalAlignment="Center" Height="53" Width="268" VerticalAlignment="Bottom"  Grid.Row="1"  Grid.ColumnSpan="2" BorderThickness="4" Background="#E6E6E6" CornerRadius="19">
+
+                        <Grid HorizontalAlignment="Stretch"  >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="45"/>
                             <ColumnDefinition/>
                             <ColumnDefinition Width="25"/>
                         </Grid.ColumnDefinitions>
                         <materialDesign:PackIcon Kind="At" Grid.Column="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="20" Height="20"/>
-                        <TextBox  x:Name="Username"  materialDesign:HintAssist.Hint="{DynamicResource Username}" Grid.Column="1"  TextWrapping="Wrap" BorderBrush="Transparent" Text="{Binding ProjectName,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true, NotifyOnValidationError=true}" ToolTip="Project title" ToolTipService.Placement="MousePoint"  Background="Transparent" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+                        <TextBox  x:Name="Username"  materialDesign:HintAssist.Hint="{DynamicResource Username}" Grid.Column="1"  TextWrapping="Wrap" BorderBrush="Transparent" Text="{Binding Email,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true, NotifyOnValidationError=true}" ToolTip="Project title" ToolTipService.Placement="MousePoint"  Background="Transparent" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
                     </Grid>
                 </Border>
-                <Border Grid.Row="2"  Grid.ColumnSpan="2" Margin="7 5 0 5" BorderBrush="WhiteSmoke" Background="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="268" BorderThickness="4"  CornerRadius="19">
-                    <Grid HorizontalAlignment="Stretch"  >
+               
+
+                <Border  HorizontalAlignment="Center" Height="53" Width="268" VerticalAlignment="Center"  Grid.Row="2"  Grid.ColumnSpan="2" BorderThickness="4" Background="#E6E6E6" CornerRadius="19">
+                    <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="45"/>
                             <ColumnDefinition/>
-                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="55"/>
                         </Grid.ColumnDefinitions>
-                        <materialDesign:PackIcon Kind="TextboxPassword" Grid.Column="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="20" Height="20"/>
-                        <TextBox  x:Name="Password"  materialDesign:HintAssist.Hint="{DynamicResource Password}" Grid.Column="1"  TextWrapping="Wrap" BorderBrush="Transparent" Text="{Binding ProjectName,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true, NotifyOnValidationError=true}" ToolTip="Project title" ToolTipService.Placement="MousePoint"  Background="Transparent" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+                        <materialDesign:PackIcon  Kind="TextboxPassword"   Grid.Column="0"  Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"></materialDesign:PackIcon>
+                        <TextBox   materialDesign:HintAssist.Hint="{DynamicResource Password}" Visibility="Hidden"  x:Name="PassTb" Text="{Binding Path=Password,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center"></TextBox>
+
+                        <PasswordBox materialDesign:HintAssist.Hint="Password" Background="Transparent" Grid.Column="1" BorderBrush="Transparent" FontSize="16"  HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                                         x:Name="PassBox"  tools:BoundPasswordBox.Attach="True" tools:BoundPasswordBox.Password="{Binding Path=Password,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True,NotifyOnValidationError=True}"
+                                         >
+                        </PasswordBox>
+
+                        <ToggleButton  Click="Button_Click" Background="Transparent"  BorderBrush="Transparent" Grid.Column="2">
+                            <ToggleButton.Style>
+                                <Style TargetType="ToggleButton">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="BorderBrush" Value="Transparent"/>
+                                    <Setter Property="ToggleButton.Content" >
+                                        <Setter.Value>
+                                            <materialDesign:PackIcon Kind="Eye" Width="24" Height="24" />
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type ToggleButton}">
+                                                <Border Background="{TemplateBinding Background}">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="ToggleButton.IsChecked" Value="True">
+                                            <Setter Property="ToggleButton.Content" >
+                                                <Setter.Value>
+                                                    <materialDesign:PackIcon Kind="EyeOff" Width="24" Height="24" />
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </ToggleButton.Style>
+                        </ToggleButton>
                     </Grid>
                 </Border>
+
+
+
                 <Grid Grid.Row="3" VerticalAlignment="Top">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1.2*"/>

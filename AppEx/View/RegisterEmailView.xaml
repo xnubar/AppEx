@@ -45,15 +45,15 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition  Width="0.1*"/>
-            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="650"/>
             <ColumnDefinition Width="0.1*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*"/>
-            <RowDefinition Height="380"/>
+            <RowDefinition Height="420"/>
             <RowDefinition  Height="0.1*"/>
         </Grid.RowDefinitions>
-        <Border Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="250" Width="500"  Background="White" BorderBrush="White" BorderThickness="1,1,1,1" CornerRadius="19">
+        <Border Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="420" Width="650"  Background="White" BorderBrush="White" BorderThickness="1,1,1,1" CornerRadius="19">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1.5*"/>

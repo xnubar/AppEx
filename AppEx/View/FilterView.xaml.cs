@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace AppEx.View
 {
     /// <summary>
-    /// Interaction logic for HeaderView.xaml
+    /// Interaction logic for FilterView.xaml
     /// </summary>
-    public partial class HeaderView : UserControl
+    public partial class FilterView : UserControl
     {
-        public HeaderView()
+        public FilterView()
         {
             InitializeComponent();
         }

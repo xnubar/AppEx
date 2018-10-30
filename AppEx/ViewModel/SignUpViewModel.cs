@@ -20,6 +20,7 @@ namespace AppEx.ViewModel
         private readonly IUserService userService;
         public SignUpViewModel(NavigationService navigation)
         {
+            this.navigation = navigation;
             userService = new UserService();
         }
 
@@ -76,7 +77,7 @@ namespace AppEx.ViewModel
                   =>
                 {
                     User user = new User();
-                   //user.Email = CurrentUser.Instance.User.Email;
+                    user.Email = CurrentUser.Instance.User.Email;
                     user.FullName = FullName;
                     user.Password = Password;
                     user.Username = UserName;

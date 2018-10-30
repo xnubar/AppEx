@@ -16,6 +16,15 @@
     <DataTemplate DataType="{x:Type vm:SignUpViewModel}">
         <v:SignUpView/>
     </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:HomeViewModel}">
+        <v:HomeView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:LoadingViewModel}">
+        <v:LoadingView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:CardOptionsViewModel}">
+        <v:CardOptionsView/>
+    </DataTemplate>
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/AppEx;component/Resources/lang.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml">

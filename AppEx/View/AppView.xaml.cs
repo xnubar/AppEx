@@ -28,6 +28,13 @@ namespace AppEx.View
             m_Languages.Add(new CultureInfo("ru-RU"));
 
         }
+        private void Window_StateChanged(object sender, EventArgs e)
+        {
+            if (WindowState == WindowState.Maximized|| WindowState == WindowState.Minimized)
+            {
+                WindowState = WindowState.Normal;
+            }
+        }
         private static List<CultureInfo> m_Languages = new List<CultureInfo>();
 
         public static List<CultureInfo> Languages

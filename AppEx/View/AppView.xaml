@@ -7,7 +7,9 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
+        WindowState="Normal" StateChanged="Window_StateChanged"
         Title="AppEX" Height="450" Width="800" MinHeight="500" MinWidth="800"
+        Icon="pack://application:,,,/AppEx;component/Resources/Images/favicon.ico"
            AllowsTransparency="False"
         WindowStyle="None">
     <Window.Resources>
@@ -23,14 +25,9 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="10*"/>
-                <ColumnDefinition Width="0.3*"/>
-                <ColumnDefinition Width="0.3*"/>
-                <ColumnDefinition Width="0.4*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="1" Background="#3F434E" Margin="0 5 0 0" Command="{Binding MinimizeCommand}" Content="{materialDesign:PackIcon Kind=WindowMinimize}" HorizontalAlignment="Right" Width="20" Height="20" Padding="0.2"/>
-            <Button Grid.Column="2" Background="#3F434E" Margin="0 5 0 0" Command="{Binding MaximizeCommand}" Content="{materialDesign:PackIcon Kind=WindowMaximize}" HorizontalAlignment="Right" Width="20" Height="20" Padding="0.2"/>
-            <Button Grid.Column="3" Background="#3F434E" Margin="0 5 5 0" Command="{Binding CloseCommand}" Content="{materialDesign:PackIcon Kind=Close}" HorizontalAlignment="Center" Width="20" Height="20" Padding="0.2"/>
+            <Button Grid.Column="3" Background="Transparent" BorderBrush="Transparent" Foreground="#3F434E"  Margin="0 15 15 0" Command="{Binding CloseCommand}" Content="{materialDesign:PackIcon Kind=Close}" HorizontalAlignment="Right" VerticalAlignment="Center" Width="30" Height="30"  Padding="0"/>
 
         </Grid>
         <ContentControl Grid.Row="1" Content="{Binding CurrentViewModel}"/>

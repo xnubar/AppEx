@@ -23,9 +23,10 @@ namespace AppEx.Tools
                 return Convert.ToBase64String(hashBytes);
 
             }
-            finally
+            catch (Exception ex)
             {
-               MessageBox.Show("Problem With Encrypt");
+                MessageBox.Show(ex.Message);
+                throw;
             }
         }
     }

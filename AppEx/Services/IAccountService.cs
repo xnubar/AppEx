@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppEx.Navigation
+namespace AppEx.Services
 {
-    public enum ViewType
+    interface IAccountService
     {
-        LogIn,RegisterEmail,ConfirmCode,SignUp,Home
+        bool LoginControl(string Email, string Password);
+
     }
 }

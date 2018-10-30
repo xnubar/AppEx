@@ -1,4 +1,5 @@
-﻿using AppEx.Navigation;
+﻿using AppEx.Model;
+using AppEx.Navigation;
 using AppEx.Tools;
 using AppEx.View;
 using GalaSoft.MvvmLight;
@@ -102,6 +103,7 @@ namespace AppEx.ViewModel
                                 GetEmail.SendRegisterActivationCode(Email);
                                 CloseWindow();
                                 navigation.NavigateTo(ViewType.ConfirmCode);
+                                CurrentUser.Instance.User = new User { Email = Email };
                                 MessageBox.Show($"Confirmation code is sent to {Email}, please, check your email and enter it to box.", "Email", MessageBoxButton.OK, MessageBoxImage.Information);
                                 Email = String.Empty;
                             }

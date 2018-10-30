@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="AppEx.View.CardOptionsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"            
+             xmlns:local="clr-namespace:AppEx.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="WhiteSmoke">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border HorizontalAlignment="Right"  VerticalAlignment="Bottom" Width="150" Height="100" BorderThickness="1" Background="#3F434E"  CornerRadius="5"  Margin="0 0 40 40" Grid.Row="0" Grid.Column="0">
+            <Button Content="ID Card" FontWeight="DemiBold"  BorderBrush="Transparent"  Command="{Binding IDCardCommand}" Background="Transparent" Foreground="White" FontSize="20"/> 
+        </Border>
+        <Border HorizontalAlignment="Left" Margin="40 0 0 40"  VerticalAlignment="Bottom" Width="150" Height="100" BorderThickness="1" Background="#018786"  CornerRadius="5"  Grid.Row="0" Grid.Column="1">
+            <Button Content="NEW ID Card" FontWeight="DemiBold"  BorderBrush="Transparent"  Command="{Binding NewIDCardCommand}" Background="Transparent" Foreground="White" FontSize="20"/>
+        </Border>
+        <Border HorizontalAlignment="Right" Margin="0 40 40 0"  VerticalAlignment="Top" Width="150" Height="100" BorderThickness="1" Background="#004D40"  CornerRadius="5"  Grid.Row="1" Grid.Column="0">
+            <Button Content="Passport" FontWeight="DemiBold"  BorderBrush="Transparent"  Command="{Binding PassportCommand}" Background="Transparent" Foreground="White" FontSize="20"/>
+        </Border>
+        <Border HorizontalAlignment="Left" Margin="40 40 0 0"  VerticalAlignment="Top" Width="150" Height="100" BorderThickness="1" Background="#607D8B"  CornerRadius="5"  Grid.Row="1" Grid.Column="1">
+            <Button Content="Driver License" FontWeight="DemiBold"  BorderBrush="Transparent"  Command="{Binding DriverLicenseCommand}" Background="Transparent" Foreground="White" FontSize="20"/>
+        </Border>
+    </Grid>
+</UserControl>

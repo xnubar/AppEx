@@ -22,14 +22,14 @@
             <RowDefinition Height="380"/>
             <RowDefinition  Height="0.1*"/>
         </Grid.RowDefinitions>
-        <Border Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="250" Width="500"  Background="White" BorderBrush="White" BorderThickness="1,1,1,1" CornerRadius="19">
+        <Border Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="420" Width="650"  Background="White" BorderBrush="White" BorderThickness="1,1,1,1" CornerRadius="19">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1.5*"/>
                     <RowDefinition Height="0.8*"/>
 
                     <RowDefinition Height="2*"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="1.3*"/>
 
                 </Grid.RowDefinitions>
                 <Border Grid.Row="0" BorderThickness="1" BorderBrush="Black" Background="#3F434E" CornerRadius="5">
@@ -50,11 +50,11 @@
                             <ColumnDefinition Width="25"/>
                         </Grid.ColumnDefinitions>
                         <materialDesign:PackIcon Kind="ConfirmationNumber" Grid.Column="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="20" Height="20"/>
-                        <TextBox  materialDesign:HintAssist.Hint="{DynamicResource ConfirmCode}" Grid.Column="1"  TextWrapping="Wrap" BorderBrush="Transparent" Text="{Binding Email,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true, NotifyOnValidationError=true}" ToolTip="Project title" ToolTipService.Placement="MousePoint"  Background="Transparent" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+                        <TextBox  materialDesign:HintAssist.Hint="{DynamicResource ConfirmCode}" Grid.Column="1"  TextWrapping="Wrap" BorderBrush="Transparent" Text="{Binding ConfirmationCode,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true, NotifyOnValidationError=true}" ToolTip="Project title" ToolTipService.Placement="MousePoint"  Background="Transparent" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
                     </Grid>
                 </Border>
                 <Border VerticalAlignment="Top" Width="200" Height="40" BorderThickness="1" Background="#3F434E"  CornerRadius="20"  Grid.Row="3">
-                    <Button Content="{DynamicResource Submit}" BorderBrush="Transparent"  Command="{Binding SendConfirmationCodeCommand}" Background="Transparent" Foreground="White" FontSize="15" >
+                    <Button Content="{DynamicResource Submit}" BorderBrush="Transparent"  Command="{Binding ConfirmCommand}" Background="Transparent" Foreground="White" FontSize="15" >
                         
                     </Button>
                 </Border>

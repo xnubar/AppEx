@@ -27,5 +27,24 @@ namespace AppEx.Tools
             }
             return false;
         }
+        public static bool CheckUsername(string username)
+        {
+            try
+            {
+                if (username == null)
+                    return false;
+                Regex regex = new Regex(@"^[a-zA-Z0-9_]{5,20}$");
+                Match match = regex.Match(username);
+                if (match.Success)
+                    return true;
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+            return false;
+
+        }
+
     }
 }
